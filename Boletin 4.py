@@ -37,11 +37,36 @@ else:
 
 #Ejercicio 3
 num=int(input("Introduce o valor do número do que queras saber o valor absoluto: "))
-while num > 0:
-    print(num) #Simplemente poñemos o valor do numero xa que este é positivo.
+if num > 0:
+    print("O valor absoluto é",num) #Simplemente poñemos o valor do numero xa que este é positivo.
 else:
     valorAbsoluto = abs(num) #Con abs calculamos o valor absoluto
     print("O valor absoluto é",valorAbsoluto)
+
+#Exercicio 4
+numero=int(input("Introduce un número entre que queiras pasar a letra: "))
+unidades = ["","un","dous","tres","catro","cinco","seis","sete","oito","nove"] #Introducimos as unidades.
+decenas = ["","dez","vinte","trinta","corenta","cinconta","sesenta","setenta","oitenta","noventa"] #Introducimos as decenas.
+if 1 <= numero < 100:
+    if numero < 10:
+        texto = unidades[numero]
+    elif numero % 10 == 0:
+        texto = decenas[numero // 10]
+    else:
+        texto = f"{decenas[numero // 10]} e {unidades[numero % 10]}"
+    print(f"O número {numero} en letras é: {texto}")
+else:
+    print("Número fóra de rango.")
+
+#Exericio 5:
+letrasDNI = ['T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'] #Lista das letras respeto ao resto que te dé o calculoLetraDNI
+numeroDNI=int(input("Introduce o número do teu DNI sen a letra:")) #Pedimos ao usuario que introduzca o seu DNI
+calculoLetraDNI  = numeroDNI % 23
+letra=letrasDNI[calculoLetraDNI] #Escolle o valor dentro da tupla letrasDNI despois do calculoLetraDNI
+print(f"O teu DNI enteiro é:{numeroDNI}{letra}") #Imprime o DNI máis a letra
+
+
+
 
 
 
